@@ -7,6 +7,7 @@ import android.content.IntentFilter;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 
@@ -14,11 +15,15 @@ public class MainActivity extends AppCompatActivity {
 
     TextView textView;
     Button button;
+    ImageView imagen;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        imagen = (ImageView) findViewById(R.id.imageView);
+        imagen.setImageResource(R.drawable.logo);
 
         IntentFilter filter = new IntentFilter();
         filter.addCategory(Intent.CATEGORY_DEFAULT);
@@ -79,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
     {
         String decodedSource = initiatingIntent.getStringExtra(getResources().getString(R.string.datawedge_intent_key_source));
         final TextView lblScanSource = (TextView) findViewById(R.id.textView);
-        lblScanSource.setText(decodedSource + " " + howDataReceived);
+        lblScanSource.setText("Tu codigo es: " + decodedSource);
 
     }
 }
