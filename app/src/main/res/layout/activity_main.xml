@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary"
+    android:background="@android:color/white"
     tools:context=".MainActivity">
 
     <LinearLayout
@@ -25,7 +25,7 @@
                 android:layout_height="80dp"
                 android:layout_weight="1"
                 android:scaleType="fitCenter"
-                tools:srcCompat="@drawable/logo" />
+                tools:srcCompat="@drawable/ic_logo_inveb_header" />
         </LinearLayout>
 
         <LinearLayout
@@ -42,43 +42,10 @@
                 android:lines="2"
                 android:text="BIENVENIDO ESCANEA TU CODIGO"
                 android:textAlignment="center"
-                android:textColor="@color/colorSecondaryLight"
+                android:textColor="@color/colorPrimary"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="25dp"
-                android:layout_marginBottom="25dp"
-                android:layout_weight="1"
-                android:lines="2"
-                android:padding="5dp"
-                android:text="Acerca tu ticket al lector inferior \ncon el codigo de barra que posee"
-                android:textAlignment="center"
-                android:textColor="@color/colorSecondaryLight"
-                android:textSize="14sp"
-                android:textStyle="bold" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_vertical|center_horizontal"
-            android:orientation="vertical">
-
-            <Button
-                android:id="@+id/scanear"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:backgroundTint="@color/colorSecondaryLight"
-                android:padding="15dp"
-                android:text="Procesar"
-                android:textColor="@color/colorPrimary"
-                android:textStyle="bold" />
         </LinearLayout>
 
         <LinearLayout
@@ -96,7 +63,7 @@
                 android:lines="2"
                 android:text="TU CODIGO ES:"
                 android:textAlignment="center"
-                android:textColor="@color/colorSecondaryLight"
+                android:textColor="@color/colorPrimary"
                 android:textSize="12sp"
                 android:textStyle="bold" />
 
@@ -108,7 +75,7 @@
                 android:layout_weight="1"
                 android:lines="2"
                 android:textAlignment="center"
-                android:textColor="@color/colorSecondaryLight"
+                android:textColor="@color/colorPrimary"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 

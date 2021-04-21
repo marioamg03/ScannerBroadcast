@@ -13,8 +13,6 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    TextView textView;
-    Button button;
     ImageView imagen;
 
     @Override
@@ -23,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         imagen = (ImageView) findViewById(R.id.imageView);
-        imagen.setImageResource(R.drawable.logo);
+        imagen.setImageResource(R.drawable.ic_logo_inveb_header);
 
         IntentFilter filter = new IntentFilter();
         filter.addCategory(Intent.CATEGORY_DEFAULT);
@@ -32,8 +30,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    protected void onDestroy()
-    {
+    protected void onDestroy() {
         super.onDestroy();
         unregisterReceiver(myBroadcastReceiver);
     }
@@ -48,27 +45,12 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onReceive(Context context, Intent intent) {
             String action = intent.getAction();
-            Bundle b = intent.getExtras();
-
-            //
-            // The following is useful for debugging to verify
-            // the format of received intents from DataWedge:
-            //
-            // for (String key : b.keySet())
-            // {
-            //   Log.v(LOG_TAG, key);
-            // }
-            //
 
             if (action.equals(getResources().getString(R.string.activity_intent_filter_action))) {
-                //
-                //  Received a barcode scan
-                //
 
                 try {
                     displayScanResult(intent, "via Broadcast");
                 } catch (Exception e) {
-
                     //
                     // Catch if the UI does not exist when broadcast is received
                     //
@@ -76,12 +58,12 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     };
+
     //
     // The section below assumes that a UI exists in which to place the data. A production
     // application would be driving much of the behavior following a scan.
     //
-    private void displayScanResult(Intent initiatingIntent, String howDataReceived)
-    {
+    private void displayScanResult(Intent initiatingIntent, String howDataReceived) {
         String decodedSource = initiatingIntent.getStringExtra(getResources().getString(R.string.datawedge_intent_key_source));
         final TextView lblScanSource = (TextView) findViewById(R.id.textView);
         lblScanSource.setText("Tu codigo es: " + decodedSource);
